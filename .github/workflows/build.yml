@@ -20,3 +20,10 @@ jobs:
 
       - name: Build
         run: scons
+        
+      - name : upload
+        uses: actions/upload-artifact@master
+        if: always()
+        with:
+          name: boot
+          path: ${{ github.workspace }}/build/
